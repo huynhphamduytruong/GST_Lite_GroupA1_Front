@@ -1,0 +1,61 @@
+<!-- <div class="container-fluid" style="height:25vh;background-color: rgb(238,238,238);"> -->
+<div class="container-fluid">
+  <div class="d-navbar">
+    <div class="row">
+      <div class="col">
+        <a href="/">
+          <h1 class="d-navbar-logo" style="font-size: 2.5rem;">{{ title }}</h1>
+          <h3 class="lead d-navbar-logo">{{ subtitle }}</h3>
+        </a>
+      </div>
+      <div class="col">
+        <ul>
+          <li>Apple</li>
+          <li>Samsung</li>
+          <li>LG</li>
+          <li>Sony</li>
+          <li>Xiaomi</li>
+          <li>Oppo</li>
+        </ul>
+      </div>
+      <div class="col text-right">
+        <button 
+          *ngIf="isAdmin()"
+          type="button"
+          style="margin-top: 30px;"
+          class="btn btn-primary"
+          routerLink="/admin"
+          >
+          Add product
+        </button>
+        <button 
+          *ngIf="showLogout()"
+          type="button"
+          style="margin-top: 30px;"
+          class="btn btn-danger"
+          (click)='onLogout()'
+          >
+          Logout
+        </button>
+        <button 
+          *ngIf="!showLogout()"
+          type="button"
+          style="margin-top: 30px;"
+          class="btn btn-primary"
+          routerLink="/login"
+          >
+          Login
+        </button>
+        <button
+          type="button"
+          style="margin-top: 30px;"
+          class="btn btn-light"
+          routerLink="/cart"
+          >
+            <i class="fas fa-shopping-cart" style="transform: rotateY(180deg) !important;"></i>
+            View Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div> 

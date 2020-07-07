@@ -1,0 +1,62 @@
+<div class="row" style="margin: 30px 0px;">
+    <div class="col-6 offset-3">
+        <h5>Add Product</h5>
+        <form (ngSubmit)="createProduct()" [formGroup]="product">
+            <div class="form-group">
+              <label>Product Name</label>
+              <input type="text" class="form-control" formControlName="productName">
+            </div>
+            <div class="form-group">
+              <label>Unit Price</label>
+              <input type="text" class="form-control" formControlName="unitPrice">
+            </div>
+            <div class="form-group">
+                <label>Units In Stock</label>
+                <input type="text" class="form-control" formControlName="unitInStock">
+              </div>
+              
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" formControlName="description">
+              </div>
+              <div class="form-group">
+                <label>Manufacturer</label>
+                <input type="text" class="form-control" formControlName="manufacturer">
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <input type="text" class="form-control" formControlName="category">
+              </div>
+              
+              <label>Condition</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="condition" id="condition1" value="0">
+                <label class="form-check-label" for="condition1">
+                  New
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="condition" id="condition2" value="1">
+                <label class="form-check-label" for="condition2">
+                  Old
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="condition" id="condition3" value="2">
+                <label class="form-check-label" for="condition3">
+                  Refurbished
+                </label>
+              </div>
+
+                <label for="uploadFile">Ảnh</label>
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="customFile" accept="image/*" (change)="updateLabel($event)">
+                      <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
+
+            <button id="btnSubmit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</div>
